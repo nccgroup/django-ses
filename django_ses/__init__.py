@@ -157,7 +157,7 @@ class SESBackend(BaseEmailBackend):
                 response = self.connection.send_raw_email(
                     source=source or message.from_email,
                     destinations=message.recipients(),
-                    raw_message=unicode(dkim_sign(message.message().as_string(),
+                    raw_message=str(dkim_sign(message.message().as_string(),
                                                   dkim_key=self.dkim_key,
                                                   dkim_domain=self.dkim_domain,
                                                   dkim_selector=self.dkim_selector,
