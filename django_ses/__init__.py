@@ -162,7 +162,7 @@ class SESBackend(BaseEmailBackend):
                                                   dkim_domain=self.dkim_domain,
                                                   dkim_selector=self.dkim_selector,
                                                   dkim_headers=self.dkim_headers,
-                                                  ), 'utf-8')
+                                                  ))
                 )
                 message.extra_headers['status'] = 200
                 message.extra_headers['message_id'] = response[
